@@ -69,8 +69,8 @@ func (n *null) Write(p []byte) (int, error) {
 
 func checkAuthorization() error {
 	serverURL := "https://auth.certauth.cn"
-	softwareName := "xray-core"
-	clientSecret := "aB3cD5eF7gH9iJ1kL3mN5oP7qR9sT1uV3wX5yZ7aB9cD1eF3gH5iJ7kL9mN1oP3qR5sT7uV9wX1yZ3"
+	softwareName := "Core"
+	clientSecret := "sk_7b2d5cd47ffa50a242c80d1b0f9d4e3a"
 
 	client, err := authclient.NewAuthClient(authclient.AuthClientConfig{
 		ServerURL:         serverURL,
