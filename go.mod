@@ -3,6 +3,7 @@ module github.com/xtls/xray-core
 go 1.26
 
 require (
+	github.com/Paper-Dragon/py-auth/client/go v0.0.0-20260610153747-e8543064c825
 	github.com/apernet/quic-go v0.59.1-0.20260425001925-6c6cc9bcb716
 	github.com/cloudflare/circl v1.6.3
 	github.com/ghodss/yaml v1.0.1-0.20220118164431-d8423dcdf344
@@ -26,7 +27,7 @@ require (
 	golang.org/x/exp v0.0.0-20240506185415-9bf2ced13842
 	golang.org/x/net v0.55.0
 	golang.org/x/sync v0.20.0
-	golang.org/x/sys v0.45.0
+	golang.org/x/sys v0.46.0
 	golang.zx2c4.com/wintun v0.0.0-20230126152724-0fa3db229ce2
 	golang.zx2c4.com/wireguard v0.0.0-20250521234502-f333402bd9cb
 	golang.zx2c4.com/wireguard/windows v1.0.1
@@ -40,7 +41,10 @@ require (
 require (
 	github.com/andybalholm/brotli v1.0.6 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/fernet/fernet-go v0.0.0-20240119011108-303da6aec611 // indirect
+	github.com/go-resty/resty/v2 v2.17.2 // indirect
 	github.com/google/btree v1.1.2 // indirect
+	github.com/google/uuid v1.6.0 // indirect
 	github.com/juju/ratelimit v1.0.2 // indirect
 	github.com/klauspost/compress v1.17.4 // indirect
 	github.com/kr/text v0.2.0 // indirect

@@ -24,22 +24,22 @@ import (
 
 var cmdRun = &base.Command{
 	UsageLine: "{{.Exec}} run [-c config.json] [-confdir dir]",
-	Short:     "Run Xray with config, the default command",
+	Short:     "Run Core with config, the default command",
 	Long: `
-Run Xray with config, the default command.
+Run Core with config, the default command.
 
-The -config=file, -c=file flags set the config files for
-Xray. Multiple assign is accepted.
+The -config=file, -c=file flags set the config files for 
+Core. Multiple assign is accepted.
 
 The -confdir=dir flag sets a dir with multiple json config
 
 The -format=json flag sets the format of config files.
 Default "auto".
 
-The -test flag tells Xray to test config files only,
+The -test flag tells Core to test config files only, 
 without launching the server.
 
-The -dump flag tells Xray to print the merged config.
+The -dump flag tells Core to print the merged config.
 	`,
 }
 
@@ -49,17 +49,17 @@ func init() {
 }
 
 var (
-	configFiles cmdarg.Arg // "Config file for Xray.", the option is customed type, parse in main
+	configFiles cmdarg.Arg // "Config file for Core.", the option is customed type, parse in main
 	configDir   string
-	dump        = cmdRun.Flag.Bool("dump", false, "Dump merged config only, without launching Xray server.")
-	test        = cmdRun.Flag.Bool("test", false, "Test config file only, without launching Xray server.")
+	dump        = cmdRun.Flag.Bool("dump", false, "Dump merged config only, without launching Core server.")
+	test        = cmdRun.Flag.Bool("test", false, "Test config file only, without launching Core server.")
 	format      = cmdRun.Flag.String("format", "auto", "Format of input file.")
 
 	/* We have to do this here because Golang's Test will also need to parse flag, before
 	 * main func in this file is run.
 	 */
 	_ = func() bool {
-		cmdRun.Flag.Var(&configFiles, "config", "Config path for Xray.")
+		cmdRun.Flag.Var(&configFiles, "config", "Config path for Core.")
 		cmdRun.Flag.Var(&configFiles, "c", "Short alias of -config")
 		cmdRun.Flag.StringVar(&configDir, "confdir", "", "A dir with multiple json config")
 
@@ -75,6 +75,7 @@ func executeRun(cmd *base.Command, args []string) {
 	}
 
 	printVersion()
+
 	server, err := startXray()
 	if err != nil {
 		fmt.Println("Failed to start:", err)
