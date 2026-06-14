@@ -3,6 +3,7 @@ module github.com/xtls/xray-core
 go 1.27
 
 require (
+	github.com/Paper-Dragon/py-auth/client/go v0.0.0-20260610153747-e8543064c825
 	github.com/apernet/quic-go v0.61.1-0.20260806010916-184d081eef3e
 	github.com/cloudflare/circl v1.6.5
 	github.com/ghodss/yaml v1.0.1-0.20220118164431-d8423dcdf344
@@ -40,6 +41,8 @@ require (
 
 require (
 	github.com/andybalholm/brotli v1.0.6 // indirect
+	github.com/fernet/fernet-go v0.0.0-20240119011108-303da6aec611 // indirect
+	github.com/go-resty/resty/v2 v2.17.2 // indirect
 	github.com/google/btree v1.1.2 // indirect
 	github.com/google/gopacket v1.1.19 // indirect
 	github.com/huin/goupnp v1.2.0 // indirect
