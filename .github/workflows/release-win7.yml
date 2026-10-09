@@ -132,12 +132,31 @@ jobs:
 
       - name: Add additional assets into package
         run: |
+          mkdir -p resources build_assets
+          # Fork/branch cold start: geodat cache may be empty; download on miss.
+          if ! compgen -G 'resources/geo*' > /dev/null; then
+            echo 'Geodat cache miss, downloading geoip/geosite...'
+            LIST=('Loyalsoldier v2ray-rules-dat geoip geoip' 'Loyalsoldier v2ray-rules-dat geosite geosite')
+            for i in "${LIST[@]}"
+            do
+              INFO=($(echo $i | awk 'BEGIN{FS=" ";OFS=" "} {print $1,$2,$3,$4}'))
+              FILE_NAME="${INFO[3]}.dat"
+              curl -fsSL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+                "https://raw.githubusercontent.com/${INFO[0]}/${INFO[1]}/release/${INFO[2]}.dat" \
+                -o "./resources/${FILE_NAME}"
+            done
+          fi
           mv -f resources/geo* build_assets/
           if [[ ${GOOS} == 'windows' ]]; then
             cp .github/build/windows/* build_assets/
           fi
           if [[ ${GOOS} == 'windows' ]]; then
             echo 'Adding Wintun into packages'
+            if [[ ! -s resources/wintun/bin/amd64/wintun.dll ]]; then
+              echo 'Wintun cache miss, downloading...'
+              curl -fsSL "https://www.wintun.net/builds/wintun-0.14.1.zip" -o wintun.zip
+              unzip -u wintun.zip -d resources/
+            fi
             if [[ ${GOARCH} == 'amd64' ]]; then
               mv resources/wintun/bin/amd64/wintun.dll build_assets/
             fi
