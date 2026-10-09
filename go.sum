@@ -1,5 +1,5 @@
-github.com/Paper-Dragon/py-auth/client/go v0.0.0-20261009020511-2ea0e0e46959 h1:wdf6XD8Is8TGDoT8RJIOZP+SlHatG4XEvuJf4OLhOJ0=
-github.com/Paper-Dragon/py-auth/client/go v0.0.0-20261009020511-2ea0e0e46959/go.mod h1:9QnpgNqb/01g6uKbat+mnqamN3g6SW7hRj7EsXUz/JA=
+github.com/Paper-Dragon/py-auth/client/go v0.0.0-20261009022056-26b74a6415bb h1:yBGPf1VV6d+eL0MCtI2toWQGmBaWAMKkLdZ19SsDWcg=
+github.com/Paper-Dragon/py-auth/client/go v0.0.0-20261009022056-26b74a6415bb/go.mod h1:9QnpgNqb/01g6uKbat+mnqamN3g6SW7hRj7EsXUz/JA=
 github.com/andybalholm/brotli v1.0.6 h1:Yf9fFpf49Zrxb9NlQaluyE92/+X7UVHlhMNJN2sxfOI=
 github.com/andybalholm/brotli v1.0.6/go.mod h1:fO7iG3H7G2nSZ7m0zPUDn85XEX2GTukHGRSepvi9Eig=
 github.com/apernet/quic-go v0.61.1-0.20260806010916-184d081eef3e h1:5mgtR5gwIgBKMiGI1QdXldZZ+SNor06Nbu1wCBulQBg=
